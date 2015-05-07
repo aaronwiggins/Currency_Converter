@@ -8,9 +8,17 @@ class Currency #name == currency code
     @amount = amount
   end
 
+  #will check if the two currency objects are equal in amount and name
   def ==(other)
     @name == other.name && @amount == other.amount
   end
-end
 
-# check if @name && @amount == @name && @amount
+  #will add the currency objects together if they have the same name
+  def +(other)
+    if @name == other.name
+      @amount + other.amount
+    else
+      puts "not the same currency code"
+    end
+  end
+end
