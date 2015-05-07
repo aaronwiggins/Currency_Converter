@@ -16,9 +16,22 @@ class Currency #name == currency code
   #will add the currency objects together if they have the same name
   def +(other)
     if @name == other.name
-      @amount + other.amount
+      Currency.new(@name, @amount + other.amount)
     else
-      puts "not the same currency code"
+      raise DifferentCurrencyCodeError, "not the same currency code"
+      # puts "not the same currency code"
     end
   end
+
+  def -(other)
+    if @name == other.name
+      Currency.new(@name, @amount - other.amount)
+    else
+      raise DifferentCurrencyCodeError, "not the same currency code"
+      # puts "not the same currency code"
+    end
+  end
+end
+
+class DifferentCurrencyCodeError < StandardError
 end
