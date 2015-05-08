@@ -3,10 +3,26 @@
 # United States Dollars
 class Currency #name == currency code
   attr_reader :name, :amount
-  def initialize(name, amount=1)
+  def initialize(name, amount=nil)
     @name = name
     @amount = amount
-    # @symbol = symbol
+
+#a hash of currency symbols & codes
+    currency_codes = {
+      "$" => "USD",
+      "€" => "EUR"
+    }
+
+#if "$ 7.00" is given as a currency. There is not an argurment to represent amount
+#It will look in the first posisiton in the string for the symbol,
+#and change it to the corresponding code.
+#It then takes the remaining posisions in the string, converts it to float,
+#and saves it as the second argument (armount).
+    if amount == nil
+      @name = currency_codes[name[0]]
+      @amount = name[1..-1].to_f
+    end
+
   end
 
   #will check if the two currency objects are equal in amount and name
