@@ -6,6 +6,7 @@ class Currency #name == currency code
   def initialize(name, amount=1)
     @name = name
     @amount = amount
+    # @symbol = symbol
   end
 
   #will check if the two currency objects are equal in amount and name
@@ -14,21 +15,30 @@ class Currency #name == currency code
   end
 
   #will add the currency objects together if they have the same name
+  # puts "not the same currency code" if the currency codes (names) are not the same
   def +(other)
     if @name == other.name
       Currency.new(@name, @amount + other.amount)
     else
       raise DifferentCurrencyCodeError, "not the same currency code"
-      # puts "not the same currency code"
     end
   end
 
+  #will subtract the amount from to currency objects if they have the same code (name)
+  # puts "not the same currency code" if the currency codes (names) are not the same
   def -(other)
     if @name == other.name
       Currency.new(@name, @amount - other.amount)
     else
       raise DifferentCurrencyCodeError, "not the same currency code"
-      # puts "not the same currency code"
+    end
+  end
+
+  def *(other)
+    if @name == other.name
+      Currency.new(@name, @amount * other.amount)
+    else
+      raise DifferentCurrencyCodeError, "not the same currency code"
     end
   end
 end
