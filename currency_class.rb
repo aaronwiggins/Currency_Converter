@@ -9,8 +9,8 @@ class Currency #name == currency code
 
 #a hash of currency symbols & codes
     currency_codes = {
-      "$" => "USD",
-      "€" => "EUR"
+      "$" => :USD,
+      "€" => :EUR
     }
 
 #if "$ 7.00" is given as a currency. There is not an argurment to represent amount
@@ -36,7 +36,7 @@ class Currency #name == currency code
     if @name == other.name
       Currency.new(@name, @amount + other.amount)
     else
-      raise DifferentCurrencyCodeError, "not the same currency code"
+      raise DifferentCurrencyCodeError, "not the same currency code (the cake is a lie)"
     end
   end
 
@@ -46,7 +46,7 @@ class Currency #name == currency code
     if @name == other.name
       Currency.new(@name, @amount - other.amount)
     else
-      raise DifferentCurrencyCodeError, "not the same currency code"
+      raise DifferentCurrencyCodeError, "not the same currency code (the cake is a lie)"
     end
   end
 
@@ -54,7 +54,7 @@ class Currency #name == currency code
     if @name == other.name
       Currency.new(@name, @amount * other.amount)
     else
-      raise DifferentCurrencyCodeError, "not the same currency code"
+      raise DifferentCurrencyCodeError, "not the same currency code (the cake is a lie)"
     end
   end
 end

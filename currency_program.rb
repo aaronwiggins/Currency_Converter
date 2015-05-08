@@ -1,10 +1,16 @@
 require "./currency_class.rb"
 require "./converter_class.rb"
 
-currency_one = Currency.new("USD", 50.00,)
-currency_two = Currency.new("USD", 50.00)
-currency_three = Currency.new("$ 7.00")
-usd_to_euro = Converter.new({USD: 1.0, EUR: 0.74})
+currency_one = Currency.new(:USD, 50.00)
+currency_two = Currency.new(:EUR, 1.00)
+currency_three = Currency.new(:JPY, 1.00)
+currency_four = Currency.new("$ 7.00")
+currency_conversions = Converter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
+
+
+
+
+######TESTING BELOW#######
 # p currency_one.amount
 # p currency_two.amount
 # p currency_one == currency_two
@@ -16,11 +22,10 @@ usd_to_euro = Converter.new({USD: 1.0, EUR: 0.74})
 # p currency_three + currency_one
 # p usd_to_euro
 # p currency_one
-#
+# p currency_one.name
 # p currency_one.class
 # p currency_one.name.class
-p currency_one
-p usd_to_euro.convert(currency_one, :EUR)
-
-#(Currency.new(1, :USD), :USD)
-# usd_to_euro.convert
+# p currency_conversions.convert(currency_one, :USD)
+# p currency_conversions.convert(currency_one, :EUR)
+# p currency_conversions.convert(currency_three, :USD)
+# p currency_conversions.convert(currency_two, :JPY)
