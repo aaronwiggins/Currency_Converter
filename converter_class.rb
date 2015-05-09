@@ -4,6 +4,12 @@ class Converter
     @conversion_rates = conversion_rates
   end
 
+#First checks if the currency codes trying to be converted exist in
+#the currency class, then checks the conversion class. If it doesn't,
+#an error is displayed.
+#Then checks if the currency codes are the same. If they are, it returns
+#a new currency object with the same amount bc no converion is needed.
+#
   def convert(currency, code)
      if !conversion_rates.include?(code) ||
        !conversion_rates.include?(currency.name)
