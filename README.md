@@ -18,11 +18,13 @@ After completing this assignment, you should...
 
 ###Normal Mode
 Create two Classes. One will represent an amount of currency. The other will represent a currency converter with multiple currencies.
+
 1. Currency Class
   * Currency objects should be created with a currency code and amount
   * Should be able to tell if two currency objects have the same currency code or not
   * Can add, subtract, or multiply currency objects with the same currency code
   * Currency class should be able to take one argument with a currency symbol embedded in it, like "$1.20" or "€ 7.00", and figure out the correct currency code and amount
+
 2. Converter Class
   * Initialized with a hash of currency codes to conversion rates
   * Should be able to take a Currency object that has one currency code and a requested currency code and return a new Currency object with the new currency code
