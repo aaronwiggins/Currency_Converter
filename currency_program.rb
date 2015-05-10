@@ -10,17 +10,3 @@ conversion_one = Converter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
 conversion_two = Converter.new({USD: 1.0, EUR: 0.88, JPY: 118.0})
 trade = Trader.new(currency_one, conversion_one,
 conversion_two)
-
-
-
-###Check requirements for Assignment###
-# p currency_one.amount
-# p currency_two.amount
-# p currency_one == currency_two
-# p currency_check = currency_one + currency_two
-# p currency_one - currency_two
-# p currency_one * currency_two
-# p currency_conversions.convert(currency_one, :EUR)
-# p currency_conversions.convert(currency_three, :USD)
-# p currency_conversions.convert(currency_two, :USD)
-# p trade.currency_conversions
