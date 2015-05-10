@@ -13,7 +13,7 @@ conversion_two)
 
 
 
-#TESTING BELOW
+###Check requirements for Assignment###
 # p currency_one.amount
 # p currency_two.amount
 # p currency_one == currency_two
@@ -23,4 +23,4 @@ conversion_two)
 # p currency_conversions.convert(currency_one, :EUR)
 # p currency_conversions.convert(currency_three, :USD)
 # p currency_conversions.convert(currency_two, :USD)
-p trade.currency_conversions
+# p trade.currency_conversions
