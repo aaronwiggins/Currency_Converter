@@ -7,7 +7,8 @@ class Currency #name == currency code
 #a hash of currency symbols & codes
     currency_codes = {
       "$" => :USD,
-      "€" => :EUR
+      "€" => :EUR,
+      "¥" => :JPY
     }
 
 #if "$ 7.00" is given as a currency. There is not an argurment to represent amount

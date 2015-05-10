@@ -9,7 +9,8 @@ class Converter
 #an error is displayed.
 #Then checks if the currency codes are the same. If they are, it returns
 #a new currency object with the same amount bc no converion is needed.
-#
+#If different codes, it will convert from the first currnecy amount and code
+#to the equivalent amount in the new code
   def convert(currency, code)
      if !conversion_rates.include?(code) ||
        !conversion_rates.include?(currency.name)
