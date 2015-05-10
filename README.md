@@ -1,7 +1,7 @@
 #Create a Currency Converter
 
 ##Description
-Create two Ruby classes. One will be for storing currency values. The other will be used to hole the conversion forumula and rates.
+Create two Ruby classes. One will be for storing currency values. The other will be used to hold the conversion forumula and rates.
 
 
 ###Objectives
