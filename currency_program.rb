@@ -31,6 +31,6 @@ currency_conversions)
 # p currency_conversions.convert(currency_three, :USD)
 # p currency_conversions.convert(currency_two, :USD)
 # p trade.initial_rate.conversion_rates[:EUR]
-# p trade.money_trader
-p trade.usd_to_eur_and_back
-p trade.usd_to_jpy_and_back
+# p trade.usd_to_eur_and_back
+# p trade.usd_to_other_currency(:JPY)
+p trade.other_currency_to_usd(:JPY)
