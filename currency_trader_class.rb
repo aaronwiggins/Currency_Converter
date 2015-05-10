@@ -6,21 +6,15 @@ class Trader
     @second_rate = second_rate
   end
 
+
+  # def new_second_rate
+  #   @second_rate.each_value do |k|
+  #   @second_rate[k] *= 0.90
+  #   end
+  # end
 #take initial_currency(in USD), convert it to EUR,
 #then converit it back to USD (assume time has passed
 #and the conversion rates have changed)
-  def money_trader
-  puts "You started with: " + "#{initial_currency.name} " +
-  "#{initial_currency.amount}"
-  puts "initial changes is : " + "#{usd_to_other_currency}"
-  puts "the change back gives you: " + "#{other_currency_to_usd}"
-  end
-
-
-###Make one method for usd to a different code.
-###Then another for a currency code back to usd
-###make money trader have 3 variables for each promp
-###Do a < > to see which convertion ends with more USD in the end
 
   # need to work with varying currency codes
   # def usd_to_eur_and_back
@@ -42,6 +36,7 @@ class Trader
   #   initial_rate.conversion_rates[initial_currency.name]
   # end
 
+
   def other_currency_to_usd(other_currency)
     initial = initial_currency.amount * initial_rate.conversion_rates[other_currency] /
     initial_rate.conversion_rates[initial_currency.name]
@@ -50,8 +45,7 @@ class Trader
 
     puts "You started with: " + "#{initial_currency.name} " +
     "#{initial_currency.amount}"
-    puts "initial changes is : " + "#{initial}"
+    puts "initial changes is to " + "#{other_currency}" " is " + "#{initial}"
     puts "the change back gives you: " + "#{final}"
-
   end
 end

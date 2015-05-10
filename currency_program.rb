@@ -6,9 +6,11 @@ currency_one = Currency.new(:USD, 100.00)
 currency_two = Currency.new(:EUR, 1.00)
 currency_three = Currency.new(:JPY, 1.00)
 currency_four = Currency.new("$ 7.00")
-currency_conversions = Converter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
-trade = Trader.new(currency_one, currency_conversions,
-currency_conversions)
+conversion_one = Converter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
+conversion_two = Converter.new({USD: 1.0, EUR: 0.88, JPY: 118.0})
+
+trade = Trader.new(currency_one, conversion_one,
+conversion_two)
 
 
 
@@ -33,4 +35,9 @@ currency_conversions)
 # p trade.initial_rate.conversion_rates[:EUR]
 # p trade.usd_to_eur_and_back
 # p trade.usd_to_other_currency(:JPY)
-p trade.other_currency_to_usd(:JPY)
+puts trade.other_currency_to_usd(:JPY)
+puts trade.other_currency_to_usd(:EUR)
+#
+# trade.second_rate.conversion_rates.each_value do |x|
+#   p x
+# end
